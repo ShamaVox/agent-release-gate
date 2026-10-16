@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="760" viewBox="0 0 900 760" role="img" aria-labelledby="t d">
+  <title id="t">How the gate decides</title>
+  <desc id="d">After the golden set runs, the gate asks four questions in order. A yes to any of them blocks the change. Four noes pass it.</desc>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#4A5263"/></marker>
+  </defs>
+  <style>
+    text { font-family: Inter, "Segoe UI", Helvetica, Arial, sans-serif; fill: #14213D; }
+    .h { font-size: 19px; font-weight: 700; }
+    .s { font-size: 15px; fill: #4A5263; }
+    .q { fill: #FFFDF8; stroke: #C9C3B6; stroke-width: 2; }
+    .line { stroke: #4A5263; stroke-width: 2.5; fill: none; marker-end: url(#a); }
+    .yes { font-size: 15px; font-weight: 700; fill: #C2410C; }
+    .no { font-size: 15px; font-weight: 700; fill: #1F8A5B; }
+  </style>
+  <rect width="900" height="760" fill="#F4F1EA"/>
+  <text x="40" y="48" class="h" style="font-size:24px">How the gate decides</text>
+
+  <rect x="40" y="80" width="520" height="64" rx="12" fill="#14213D"/>
+  <text x="64" y="119" class="h" style="fill:#F4F1EA">Run the golden set, grade every output</text>
+
+  <rect class="q" x="40" y="184" width="520" height="80" rx="12"/>
+  <text x="64" y="218" class="h">A case that passed in the baseline fails now?</text>
+  <text x="64" y="244" class="s">names every regressed case and why</text>
+
+  <rect class="q" x="40" y="304" width="520" height="80" rx="12"/>
+  <text x="64" y="338" class="h">First-pass success fell more than allowed?</text>
+  <text x="64" y="364" class="s">--max-rate-drop, default 0</text>
+
+  <rect class="q" x="40" y="424" width="520" height="80" rx="12"/>
+  <text x="64" y="458" class="h">Any value that is not in the source?</text>
+  <text x="64" y="484" class="s">--max-invented, default 0</text>
+
+  <rect class="q" x="40" y="544" width="520" height="80" rx="12"/>
+  <text x="64" y="578" class="h">A golden case was deleted?</text>
+  <text x="64" y="604" class="s">--allow-removed-cases to accept it</text>
+
+  <rect x="40" y="664" width="520" height="64" rx="12" fill="#1F8A5B"/>
+  <text x="64" y="703" class="h" style="fill:#FFFFFF">PASS · exit 0</text>
+
+  <rect x="660" y="364" width="200" height="120" rx="12" fill="#C2410C"/>
+  <text x="684" y="412" class="h" style="fill:#FFFFFF">BLOCKED</text>
+  <text x="684" y="440" class="s" style="fill:#FBE3D6">exit 1, with</text>
+  <text x="684" y="460" class="s" style="fill:#FBE3D6">every reason</text>
+
+  <path class="line" d="M300,144 L300,180"/>
+  <path class="line" d="M300,264 L300,300"/>
+  <path class="line" d="M300,384 L300,420"/>
+  <path class="line" d="M300,504 L300,540"/>
+  <path class="line" d="M300,624 L300,660"/>
+  <text x="312" y="288" class="no">no</text>
+  <text x="312" y="408" class="no">no</text>
+  <text x="312" y="528" class="no">no</text>
+  <text x="312" y="648" class="no">no</text>
+
+  <path class="line" d="M560,224 C620,224 640,300 700,360"/>
+  <path class="line" d="M560,344 C610,344 630,380 656,396"/>
+  <path class="line" d="M560,464 C610,464 630,440 656,432"/>
+  <path class="line" d="M560,584 C620,584 650,520 720,488"/>
+  <text x="590" y="214" class="yes">yes</text>
+  <text x="580" y="336" class="yes">yes</text>
+  <text x="580" y="484" class="yes">yes</text>
+  <text x="590" y="604" class="yes">yes</text>
+</svg>

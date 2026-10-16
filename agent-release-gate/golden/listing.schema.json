@@ -1,0 +1,11 @@
+{
+  "name": "product-listing",
+  "fields": {
+    "title": {"type": "string", "truth": "verbatim"},
+    "price": {"type": "number", "truth": "number"},
+    "currency": {"type": "string", "truth": {"evidence": {"USD": ["$", "USD", "US$"], "EUR": ["€", "EUR"], "GBP": ["£", "GBP"]}}},
+    "size": {"type": "string", "nullable": true, "truth": "verbatim"},
+    "color": {"type": "string", "nullable": true, "truth": "verbatim"},
+    "sku": {"type": "string", "truth": "verbatim"}
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "c01-pipes": {
+    "title": "Linen Wrap Dress",
+    "price": 148.0,
+    "currency": "USD",
+    "size": "M",
+    "color": "Sage",
+    "sku": "LW-20391"
+  },
+  "c02-thousands": {
+    "title": "Cashmere Crew Sweater",
+    "price": 1299.0,
+    "currency": "USD",
+    "size": "L",
+    "color": "Navy",
+    "sku": "CC-7781"
+  },
+  "c03-euro-after": {
+    "title": "Silk Slip Skirt",
+    "price": 89.5,
+    "currency": "EUR",
+    "size": "S",
+    "color": "Ivory",
+    "sku": "SS-104"
+  },
+  "c04-no-size": {
+    "title": "Wool Overcoat",
+    "price": 1450.0,
+    "currency": "EUR",
+    "size": null,
+    "color": "Camel",
+    "sku": "WO-3320"
+  },
+  "c05-bag": {
+    "title": "Leather Tote Bag",
+    "price": 425.0,
+    "currency": "USD",
+    "size": null,
+    "color": "Black",
+    "sku": "LT-0042"
+  },
+  "c06-no-colour": {
+    "title": "Cotton Poplin Shirt",
+    "price": 64.0,
+    "currency": "USD",
+    "size": "XL",
+    "color": null,
+    "sku": "CP-551"
+  },
+  "c07-labelled": {
+    "title": "Merino Beanie",
+    "price": 35.0,
+    "currency": "GBP",
+    "size": null,
+    "color": "Charcoal",
+    "sku": "MB-12"
+  },
+  "c08-slashes": {
+    "title": "Blush Midi Dress",
+    "price": 210.0,
+    "currency": "USD",
+    "size": "8",
+    "color": "Blush",
+    "sku": "BM-808"
+  },
+  "c09-colour-last": {
+    "title": "Denim Jacket",
+    "price": 2150.0,
+    "currency": "USD",
+    "size": "M",
+    "color": "Blue",
+    "sku": "DJ-9001"
+  },
+  "c10-eur-thousands": {
+    "title": "Trench Coat",
+    "price": 1875.0,
+    "currency": "EUR",
+    "size": "10",
+    "color": "Olive",
+    "sku": "TC-10"
+  },
+  "c11-shoes": {
+    "title": "Canvas Sneakers",
+    "price": 95.0,
+    "currency": "USD",
+    "size": "9",
+    "color": "White",
+    "sku": "CS-0909"
+  },
+  "c12-sparse": {
+    "title": "Satin Scarf",
+    "price": 48.0,
+    "currency": "USD",
+    "size": null,
+    "color": null,
+    "sku": "SS-77"
+  }
+}

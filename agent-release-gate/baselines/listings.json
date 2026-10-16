@@ -1,0 +1,30 @@
+{
+  "agent": "py:agents.listing_agent:extract",
+  "cases": {
+    "c01-pipes": true,
+    "c02-thousands": true,
+    "c03-euro-after": true,
+    "c04-no-size": true,
+    "c05-bag": true,
+    "c06-no-colour": true,
+    "c07-labelled": true,
+    "c08-slashes": true,
+    "c09-colour-last": true,
+    "c10-eur-thousands": true,
+    "c11-shoes": true,
+    "c12-sparse": true
+  },
+  "created_at": "2026-10-16T04:38:24+00:00",
+  "suite": "listings",
+  "summary": {
+    "case_errors": 0,
+    "cases_passed": 12,
+    "cases_total": 12,
+    "field_accuracy": 1.0,
+    "first_pass_success_rate": 1.0,
+    "invented_fields": 0,
+    "latency_p50_ms": 0.103726,
+    "latency_p95_ms": 0.610919
+  },
+  "version": 1
+}

@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="560" viewBox="0 0 1400 560" role="img" aria-labelledby="t d">
+  <title id="t">Agent release gate: architecture</title>
+  <desc id="d">The golden set and schema feed the runner, which calls your agent for each case. Graders check shape, truth and correctness. The gate compares the run with the committed baseline and passes or blocks the change, writing a report and metrics.</desc>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#4A5263"/></marker>
+  </defs>
+  <style>
+    text { font-family: Inter, "Segoe UI", Helvetica, Arial, sans-serif; fill: #14213D; }
+    .h { font-size: 20px; font-weight: 700; }
+    .s { font-size: 15px; fill: #4A5263; }
+    .m { font-family: "JetBrains Mono", Menlo, Consolas, monospace; font-size: 14px; fill: #4A5263; }
+    .box { fill: #FFFDF8; stroke: #C9C3B6; stroke-width: 2; }
+    .line { stroke: #4A5263; stroke-width: 2.5; fill: none; marker-end: url(#a); }
+  </style>
+  <rect width="1400" height="560" fill="#F4F1EA"/>
+  <text x="40" y="44" class="h" style="font-size:24px">Agent release gate</text>
+  <text x="300" y="44" class="s">Old gates check shape. This one checks truth, on every change.</text>
+
+  <!-- inputs -->
+  <rect class="box" x="40" y="90" width="230" height="96" rx="12"/>
+  <text x="60" y="126" class="h">Golden set</text>
+  <text x="60" y="152" class="s">real inputs, right answers</text>
+  <text x="60" y="172" class="m">golden/listings.jsonl</text>
+  <rect class="box" x="40" y="226" width="230" height="96" rx="12"/>
+  <text x="60" y="262" class="h">Schema</text>
+  <text x="60" y="288" class="s">fields, types, truth rules</text>
+  <text x="60" y="308" class="m">listing.schema.json</text>
+
+  <!-- runner + agent -->
+  <rect x="340" y="150" width="210" height="110" rx="12" fill="#14213D"/>
+  <text x="362" y="194" class="h" style="fill:#F4F1EA">Runner</text>
+  <text x="362" y="222" class="s" style="fill:#C9CFDB">each case, timed,</text>
+  <text x="362" y="242" class="s" style="fill:#C9CFDB">errors isolated</text>
+  <rect class="box" x="340" y="370" width="210" height="118" rx="12" style="stroke:#2E5BDB;stroke-dasharray:6 5"/>
+  <text x="362" y="406" class="h">Your agent</text>
+  <text x="362" y="434" class="m">py:module:function</text>
+  <text x="362" y="456" class="m">cmd:any program</text>
+  <text x="362" y="476" class="s">JSON in, JSON out</text>
+
+  <!-- graders -->
+  <rect class="box" x="620" y="80" width="270" height="318" rx="12"/>
+  <text x="642" y="116" class="h">Graders</text>
+  <rect x="640" y="134" width="230" height="70" rx="10" fill="#E8EEFC"/>
+  <text x="656" y="164" class="h" style="font-size:17px">Shape</text>
+  <text x="656" y="188" class="s">fields and types are right</text>
+  <rect x="640" y="214" width="230" height="70" rx="10" fill="#FBEFD9"/>
+  <text x="656" y="244" class="h" style="font-size:17px">Truth</text>
+  <text x="656" y="268" class="s">every value is in the source</text>
+  <rect x="640" y="294" width="230" height="86" rx="10" fill="#E3F2EA"/>
+  <text x="656" y="324" class="h" style="font-size:17px">Correctness</text>
+  <text x="656" y="348" class="s">matches the known-right</text>
+  <text x="656" y="368" class="s">answer, field by field</text>
+
+  <!-- report -->
+  <rect class="box" x="620" y="430" width="270" height="88" rx="12"/>
+  <text x="642" y="464" class="h">Report + metrics</text>
+  <text x="642" y="494" class="m">report.json · metrics.prom</text>
+
+  <!-- gate + baseline -->
+  <rect x="960" y="150" width="210" height="110" rx="12" fill="#14213D"/>
+  <text x="982" y="194" class="h" style="fill:#F4F1EA">Gate</text>
+  <text x="982" y="222" class="s" style="fill:#C9CFDB">compare with the</text>
+  <text x="982" y="242" class="s" style="fill:#C9CFDB">last known-good run</text>
+  <rect class="box" x="960" y="370" width="210" height="118" rx="12"/>
+  <text x="982" y="406" class="h">Baseline</text>
+  <text x="982" y="434" class="s">committed, reviewed</text>
+  <text x="982" y="456" class="m">baselines/</text>
+  <text x="982" y="476" class="m">listings.json</text>
+
+  <!-- outcomes -->
+  <rect x="1230" y="104" width="140" height="76" rx="12" fill="#1F8A5B"/>
+  <text x="1250" y="138" class="h" style="fill:#FFFFFF">PASS</text>
+  <text x="1250" y="162" class="s" style="fill:#E3F2EA">exit 0 · merge</text>
+  <rect x="1230" y="230" width="140" height="90" rx="12" fill="#C2410C"/>
+  <text x="1250" y="264" class="h" style="fill:#FFFFFF">BLOCKED</text>
+  <text x="1250" y="288" class="s" style="fill:#FBE3D6">exit 1 · names</text>
+  <text x="1250" y="306" class="s" style="fill:#FBE3D6">the cases</text>
+
+  <!-- arrows -->
+  <path class="line" d="M270,138 C305,138 305,190 336,190"/>
+  <path class="line" d="M270,274 C305,274 305,226 336,226"/>
+  <path class="line" d="M420,262 L420,366"/>
+  <path class="line" d="M470,368 L470,264"/>
+  <text x="482" y="320" class="s">output</text>
+  <text x="352" y="320" class="s">input</text>
+  <path class="line" d="M550,205 L616,205"/>
+  <path class="line" d="M890,205 L956,205"/>
+  <path class="line" d="M755,398 L755,426"/>
+  <path class="line" d="M1065,370 L1065,264"/>
+  <path class="line" d="M1170,180 C1200,180 1200,142 1226,142"/>
+  <path class="line" d="M1170,230 C1200,230 1200,268 1226,268"/>
+  <text x="1230" y="358" class="s" style="font-weight:700;fill:#14213D">Blocks on:</text>
+  <text x="1230" y="382" class="s">a regressed case</text>
+  <text x="1230" y="404" class="s">a drop in success</text>
+  <text x="1230" y="426" class="s">an invented value</text>
+  <text x="1230" y="448" class="s">a deleted case</text>
+</svg>
