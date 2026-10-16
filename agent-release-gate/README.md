@@ -22,7 +22,7 @@ when quality drops.
 ## Quickstart (2 minutes)
 
 ```bash
-git clone https://github.com/<your-handle>/agent-release-gate.git
+git clone https://github.com/shamavox/agent-release-gate.git
 cd agent-release-gate
 
 # Run the golden set and gate against the committed baseline
@@ -173,7 +173,7 @@ tests/                      unit, integration and regression tests
 **Shama Keskar** is a three-time startup CTO. She started as a test engineer at Google and spent
 16 years at Google, LinkedIn and Amazon. She takes agentic AI from demo to production.
 
-- LinkedIn: [add your LinkedIn URL]
+- LinkedIn: https://www.linkedin.com/in/shamakeskar/
 - Plumbline, the full version of these ideas: https://shamavox.github.io/plumbline
 
 ## License
