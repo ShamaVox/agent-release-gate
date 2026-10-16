@@ -176,6 +176,4 @@ tests/                      unit, integration and regression tests
 - LinkedIn: https://www.linkedin.com/in/shamakeskar/
 - Plumbline, the full version of these ideas: https://shamavox.github.io/plumbline
 
-## License
 
-MIT. See [LICENSE](LICENSE).
